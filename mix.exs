@@ -7,6 +7,10 @@ defmodule SdMon.MixProject do
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
+      package: package(),
+      make_targets: ["all"],
+      make_clean: ["clean"],
+      compilers: [:elixir_make | Mix.compilers()],
       deps: deps()
     ]
   end
@@ -23,6 +27,14 @@ defmodule SdMon.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:elixir_make, "~> 0.6.3"},
     ]
   end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README.md", "c_src/*.[ch]", "Makefile"],
+    ]
+  end
+
 end
