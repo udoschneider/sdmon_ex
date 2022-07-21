@@ -34,7 +34,7 @@ defmodule SdMon.MixProject do
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "c_src/*.[ch]", "Makefile"],
+      files: ["lib", "mix.exs", "README.md", "c_src/*.[ch]", "Makefile", "LICENSE", "CHANGELOG"],
     ]
   end
 
