@@ -1,6 +1,6 @@
 # SdMon
 
-`SdMon` is a simple Elixir around https://github.com/Ognian/sdmon which provides health monitoring for some industrial grade SD Cards.
+`SdMon` is a simple Elixir wrapper around https://github.com/Ognian/sdmon which provides health monitoring for some industrial grade SD Cards.
 It's currently based on version [v0.4.1](https://github.com/Ognian/sdmon/tree/v0.4.1) of [sdmon.c](https://raw.githubusercontent.com/Ognian/sdmon/v0.4.1/src/sdmon.c).
 
 
@@ -13,7 +13,7 @@ in your `mix.exs`:
 ```elixir
 def deps do
   [
-    {:sdmon_ex, git: "https://github.com/udo_schneider/sdmon_ex.git", tag: "0.1.0"}
+    {:sdmon_ex, git: "https://github.com/udoschneider/sdmon_ex.git", tag: "v0.1.0"}
   ]
 end
 ```
