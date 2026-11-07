@@ -114,7 +114,7 @@ defmodule SdMon do
   # Public for testing with mocked sdmon output.
   @spec decode_output(binary()) :: {:ok, data()} | {:error, {:invalid_json, binary()}}
   def decode_output(output) do
-    case output |> sanitize() |> Jason.decode() do
+    case output |> sanitize() |> JSON.decode() do
       {:ok, data} -> {:ok, data}
       {:error, _} -> {:error, {:invalid_json, output}}
     end

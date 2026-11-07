@@ -21,7 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   fields `"method"` and `"addTime"` are added; vendor flags such as
   `"SanDisk"` are booleans instead of the string `"true"`
 - Update `elixir_make` from 0.6.3 to 0.10.1
-- Require Elixir `~> 1.14` (needed by `elixir_make` 0.10)
+- Require Elixir `~> 1.18` and use its built-in `JSON` module instead of
+  the `jason` dependency
 - Rename CHANGELOG to CHANGELOG.md
 - `SdMon.run/1` returns `{:error, {:invalid_json, output}}` instead of `:error`
   when the output cannot be decoded
