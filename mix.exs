@@ -5,13 +5,16 @@ defmodule SdMon.MixProject do
     [
       app: :sdmon_ex,
       version: "0.1.0",
+      description: "Elixir wrapper around sdmon, a health monitor for industrial grade SD cards",
+      source_url: "https://github.com/udoschneider/sdmon_ex",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       package: package(),
       make_targets: ["all"],
       make_clean: ["clean"],
       compilers: [:elixir_make | Mix.compilers()],
-      deps: deps()
+      deps: deps(),
+      docs: [main: "readme", extras: ["README.md", "CHANGELOG.md"]]
     ]
   end
 
@@ -29,13 +32,26 @@ defmodule SdMon.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:elixir_make, "~> 0.6.3"},
       {:jason, "~> 1.3"},
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false}
     ]
   end
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "c_src/*.[ch]", "Makefile", "LICENSE", "CHANGELOG"],
+      files: [
+        "lib",
+        "mix.exs",
+        "README.md",
+        "c_src/*.[ch]",
+        "Makefile",
+        "LICENSE",
+        "CHANGELOG.md"
+      ],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/udoschneider/sdmon_ex",
+        "sdmon" => "https://github.com/Ognian/sdmon"
+      }
     ]
   end
-
 end
